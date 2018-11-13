@@ -10,20 +10,17 @@ class NewsTitle extends Component {
       id: 0,
       title: ""
     };
-
-    this.openPopUp = this.openPopUp.bind(this);
-    this.closePopUp = this.closePopUp.bind(this);
   }
-  openPopUp() {
+  openPopUp = () => {
     this.setState({
       PopupVisible: true
     });
-  }
-  closePopUp() {
+  };
+  closePopUp = () => {
     this.setState({
       PopupVisible: false
     });
-  }
+  };
   async componentDidMount() {
     let fetched = await fetch(URL + this.props.id + ".json");
     let result = await fetched.json();

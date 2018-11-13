@@ -1,14 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import API from "../API/API";
 
-class Body extends Component {
-  render() {
-    return (
-      <div className="Body">
-        <API />
-      </div>
-    );
-  }
-}
-
+const Body = props => {
+  return (
+    <div className="Body">
+      <API />
+    </div>
+  );
+};
 export default Body;

@@ -5,9 +5,6 @@ let comments = [];
 const URL = "https://hacker-news.firebaseio.com/v0/item/";
 
 class Comments extends Component {
-  constructor(props) {
-    super(props);
-  }
   async getAllComments(comment, padding) {
     // console.log("comment is ", comment);
     let finalList = await Promise.all(
@@ -35,7 +32,7 @@ class Comments extends Component {
     }
   }
 
-  showComment(comment) {
+  showComment = comment => {
     //console.log("comment is ", comment);
     return (
       <SingleComment
@@ -46,7 +43,7 @@ class Comments extends Component {
         text={comment.text}
       />
     );
-  }
+  };
   render() {
     return <div>{comments.map(comment => this.showComment(comment))}</div>;
   }

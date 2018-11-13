@@ -15,9 +15,9 @@ class Popup extends Component {
       descendants: 0
     };
   }
-  close() {
+  close = () => {
     this.props.onClose();
-  }
+  };
   async componentDidMount() {
     let fetched = await fetch(URL + this.props.id + ".json");
     let result = await fetched.json();

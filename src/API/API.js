@@ -28,10 +28,10 @@ class API extends Component {
     this.setState({ entries: NewsInAPage });
     //console.log(this.state.entries);
   }
-  showCards(ids) {
+  showCards = ids => {
     // console.log("ids is ", ids);
     return <NewsTitle key={ids} id={ids} />;
-  }
+  };
 
   render() {
     return <div>{this.state.entries.map(entry => this.showCards(entry))}</div>;
