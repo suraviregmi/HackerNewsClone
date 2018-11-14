@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import CoinTable from "./CoinTable";
+import DisplayTable from "./DisplayTable";
 import data from "../data/coins.json";
 
-class Table extends Component {
+class ProcessTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data,
+      data: [],
+
       direction: {
         price_usd: "asc",
         price_btc: "asc",
@@ -18,7 +19,12 @@ class Table extends Component {
     this.sortBy = this.sortBy.bind(this);
   }
 
-  sortBy = value => {
+  componentWillMount() {
+    this.setState({ data: this.props.parentState.detailEntry });
+  }
+  sortBy = (value = 10) => {
+    console.log("value", this.state.data);
+
     this.setState({
       data: data.sort((a, b) =>
         this.state.direction[value] === "asc"
@@ -32,16 +38,20 @@ class Table extends Component {
   };
 
   render() {
+    // console.log("in process table  the ", this.props.parentState.detailEntry);
+    let detailData = this.props.parentState.detailEntry;
+    // console.log(" detail dat a", detailData);
     return (
-      <div className="Table">
-        <CoinTable
-          key={this.state.data}
-          data={this.state.data}
+      <div className="ProcessTable">
+        <DisplayTable
+          key=""
+          data={detailData}
           sortBy={this.sortBy}
+          displayNumber={this.props.displayNumber}
         />
       </div>
     );
   }
 }
 
-export default Table;
+export default ProcessTable;

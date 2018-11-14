@@ -26,7 +26,7 @@ class API extends Component {
       NewsInAPage.push(result[i]);
     }
     this.setState({ entries: NewsInAPage });
-    //console.log(this.state.entries);
+    console.log("entries", this.state.entries);
   }
   showCards = ids => {
     // console.log("ids is ", ids);

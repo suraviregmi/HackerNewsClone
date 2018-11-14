@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CoinTable extends Component {
+class DisplayTable extends Component {
   getRows = row => {
     return (
       <tr>
@@ -14,7 +14,7 @@ class CoinTable extends Component {
   };
   render() {
     return (
-      <div className="CoinTable">
+      <div className="DisplayTable">
         <table>
           <thead>
             <tr>
@@ -45,4 +45,4 @@ class CoinTable extends Component {
   }
 }
 
-export default CoinTable;
+export default DisplayTable;

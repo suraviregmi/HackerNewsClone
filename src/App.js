@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Main from "./Main";
-import Table from "./Table/Table";
+import MainTable from "./Table/MainTable";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -10,7 +10,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path="/" exact component={Main} />
-          <Route path="/table" component={Table} />
+          <Route path="/table" component={MainTable} />
         </div>
       </Router>
     );
